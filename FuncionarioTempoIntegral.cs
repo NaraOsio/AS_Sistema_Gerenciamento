@@ -1,5 +1,4 @@
-
-public class FuncionarioTempoIntegral : Funcionario //Herdando da classe funcionario
+public class FuncionarioTempoIntegral : Funcionario, IBonus //Herdando da classe funcionario e implementando a interface
 {
     private double SalarioMensal;
     public FuncionarioTempoIntegral(string nome, int matricula , double salarioMensal) : base(nome, matricula)//Declarando construtor base
@@ -18,4 +17,8 @@ public class FuncionarioTempoIntegral : Funcionario //Herdando da classe funcion
         Console.WriteLine($"matricula {Matricula} " );
     }
 
+    public double CalcularBonus()
+    {
+        return SalarioMensal * 10 / 100; //retorna 10% do salario
+    }
 }
